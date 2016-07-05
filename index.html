@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Drupal 8 image cropping</title>
+    <meta name="description" content="Presentation about image cropping in Drupal 8.">
+    <meta name="author" content="Janez Urevc, Alexander Ross">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+	<section id="front">
+	  <!--<img src="img/drupalddmilan.png" style="border: none; max-height: 300px; background: none;" />-->
+	  <h2>Image cropping in Drupal 8</h2>
+	  <p>
+	    <a href="https://www.drupal.org/u/slashrsm">Janez Urevc</a> / <a href="http://twitter.com/slashrsm">@slashrsm</a> / <a href="http://janezurevc.name">http://janezurevc.name</a><br />
+	    <a href="https://www.drupal.org/u/bleen">Alexander Ross</a> / <a href="http://twitter.com/bleen18">@bleen18</a> / <a href="http://bleen.net">http://bleen.net</a>
+	  </p>
+	  <p>
+	    <a href="https://slashrsm.github.io/d8-cropping-session/">slashrsm.github.io/d8-cropping-session/</a>
+	  </p>
+	</section>
+
+	<section>
+	  <section id="about-janez">
+	    <h2>Janez Urevc (<a href="https://drupal.org/u/slashrsm">@slashrsm</a>)</h2>
+	    <ul>
+	      <li>senior engineer and team lead at MD Systems</li>
+	      <li class="fragment">Active member of Drupal community since 2009</li>
+	      <li class="fragment">Lead of the D8 media initiative</li>
+	      <li class="fragment">ex Examiner.com</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <h2>Biggest company contributor</h2>
+	    <img src="img/credits.png" class="stretch" />
+	    <p>Source: <a href="https://drupal.org/drupal-services">drupal.org/drupal-services</a></p>
+      <p><a href="http://www.md-systems.ch">http://www.md-systems.ch/en</a></p>
+	    <aside class="notes">
+        <ul>
+          <li>top 5 D8 ind. contrib.</li>
+          <li>D8 expert</li>
+          <li>D8 media expert (NP8)</li>
+        </ul>
+      </aside>
+	  </section>
+
+	  <section>
+	    <img src="img/remote.jpg" class="stretch" />
+	    <p><a href="https://37signals.com/remote/">Remote: Office not required</a></p>
+	  </section>
+
+	  <section>
+	    <img src="img/sunset.jpg" class="stretch" />
+	  </section>
+
+	  <section>
+	    <img src="img/chaung_ta.jpg" class="stretch" />
+	  </section>
+
+	  <section>
+	    <img src="img/girls.jpg" class="stretch" />
+	  </section>
+
+	  <section>
+	    <img src="img/madagascar.jpg" class="stretch" />
+	  </section>
+
+	  <section>
+	    <img src="img/motorbike.jpg" class="stretch" />
+    </section>
+
+	  <section>
+	    <img src="img/animal_farm.jpg" class="stretch" />
+	  </section>
+
+	  <section>
+	    <h2>I am always happy to help!</h2>
+	  </section>
+	</section>
+
+  <section>
+    <section id="about-alex">
+      //TODO about Alex
+      <aside class="notes">
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </aside>
+    </section>
+  </section>
+
+	<section id="contents">
+	  <h2>Contents of the session</h2>
+	  <ul>
+	    <li>What we learned in D7?</li>
+	    <li>Crop API</li>
+      <li>UI modules in Drupal 8</li>
+	    <li>How to get involved</li>
+	    <li>Q&amp;A</li>
+	  </ul>
+      <aside class="notes">
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </aside>
+	</section>
+
+  <section>
+	  <section id="d7-learned">
+	    - list D7 modules
+      - explain things that we learned in D7
+      <aside class="notes">
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+	</section>
+
+  <section>
+	  <section id="crop-api">
+      - Idea: Common storage component
+      - Architectual details
+      - Problems
+      - Ideas
+      - Guidelines for developers
+      <aside class="notes">
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+	</section>
+
+  <section>
+	  <section id="crop-ui-focal-point">
+      Focal point
+	  </section>
+
+	  <section id="crop-ui-advanced-crop">
+      Advanced crop
+	  </section>
+
+	  <section id="crop-ui-imgae-widget-crop">
+      Image widget crop
+	  </section>
+	</section>
+
+  <section id="roadmap">
+	  <h2>Roadmap</h2>
+    <p>Crop API is pretty stable. We want to add support for rotation: <a href="https://www.drupal.org/node/2691045">#2691045</a></p>
+    <p>Our main objective at this point is supporting developers of UI modules.</p>
+	</section>
+
+  <section id="get-involved">
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://github.com/drupal-media">github.com/drupal-media</a></li>
+      <li><a href="http://groups.drupal.org/media">groups.drupal.org/media</a></li>
+      <li>Individual project pages and issue queues</li>
+      <li>#drupal-media IRC</li>
+      <li>@slashrsm - <a href="https://www.drupal.org/u/slashrsm">drupal.org/u/slashrsm</a></li>
+      <li>@bleen - <a href="https://www.drupal.org/u/bleen">drupal.org/u/bleen</a></li>
+    </ul>
+  </section>
+
+	<section id="last">
+	  <h2>Thank you! Questions?</h2>
+	  <p>
+	    <a href="https://www.drupal.org/u/slashrsm">Janez Urevc</a> / <a href="http://twitter.com/slashrsm">@slashrsm</a> / <a href="http://janezurevc.name">http://janezurevc.name</a><br />
+	    <a href="https://www.drupal.org/u/bleen">Alexander Ross</a> / <a href="http://twitter.com/bleen18">@bleen18</a> / <a href="http://bleen.net">http://bleen.net</a>
+	  </p>
+	  <p>
+	    <a href="https://slashrsm.github.io/d8-cropping-session/">slashrsm.github.io/d8-cropping-session/</a>
+	  </p>
+	</section>
+
+      </div>
+    </div>
+    <div class="footer" style="position:relative; bottom: 50px;">
+      <a href="http://md-systems.ch"><div class="logo" style="width: 100px; float: left; margin-left: 20px;"><img src="img/md.png" style="width: 100%;" /></div></a>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
