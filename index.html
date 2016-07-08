@@ -251,6 +251,8 @@
       <ul>
 	      <li class="fragment">A lot of modules with very different approaches to image cropping</li>
 	      <li class="fragment">&hellip; but they all share a nearly identical strategy for storing the crop data</li>
+	      <li class="fragment">&hellip; hard to switch between modules (custom migration needed)</li>
+	      <li class="fragment">&hellip; waste of resources</li>
 	    </ul>
       <aside class="notes">
         <ul>
@@ -262,15 +264,126 @@
 	</section>
 
   <section>
+	  <section id="fix-d8">
+      <h2>Let's fix the situation for Drupal 8!</h2>
+      <aside class="notes">
+        <ul>
+          <li>general paradigm in D8 media</li>
+          <li>reusable components</li>
+          <li>standard tools</li>
+        </ul>
+      </aside>
+	  </section>
+
 	  <section id="crop-api">
-      - Idea: Common storage component
-      - Architectual details
-      - Problems
-      - Ideas
-      - Guidelines for developers
+      <h2>Crop API is born...</h2>
+      <ul>
+	      <li class="fragment">Attempt to standardize cropping storage and image effects</li>
+	      <li class="fragment">&hellip; uses Entity system - Crop is an entity</li>
+	      <li class="fragment">&hellip; standard (swappable) storage</li>
+	      <li class="fragment">&hellip; easy to work with</li>
+	      <li class="fragment">&hellip; automated tests</li>
+	      <li class="fragment">&hellip; basic image effects provided</li>
+	      <li class="fragment">&hellip; bundlable</li>
+	      <li class="fragment">&hellip; fieldable</li>
+        <li class="fragment">&hellip; <a href="https://drupal.org/project/crop">drupal.org/project/crop</a></li>
+	    </ul>
       <aside class="notes">
         <ul>
           <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+	  <section id="crop-api-storage">
+      <img src="img/crop-area.jpg" class="stretch" />
+      <aside class="notes">
+        <ul>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+	  <section id="crop-api-code-1">
+      <h2>Create a Crop entity...</h2>
+      <pre><code class="php">
+$crop = \Drupal\crop\Entity\Crop::create([
+      'type' => 'dummy_crop_type',
+      'entity_id' => $file->id(),
+      'entity_type' => $file->getEntityTypeId(),
+      'x' => '100',
+      'y' => '150',
+      'width' => '200',
+      'height' => '250',
+]);
+$crop->save();
+      </code></pre>
+      <aside class="notes">
+        <ul>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+	  <section id="crop-api-code-2">
+      <h2>Find and use a Crop entity...</h2>
+      <pre><code class="php">
+$crop = \Drupal\crop\Entity\Crop::findCrop($uri, $crop_type);
+$size = $crop->getSize();
+$position = $crop->getPosition();
+
+// Anchor (top-left corner) is calculated on the fly.
+$anchor = $crop->getAnchor();
+      </code></pre>
+      <aside class="notes">
+        <ul>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+    <section id="crop-api-other-features">
+      <h2>Other features...</h2>
+      <ul>
+	      <li class="fragment">aspect ratio definition</li>
+	      <li class="fragment">soft size limit</li>
+	      <li class="fragment">hard size limit</li>
+	    </ul>
+      <aside class="notes">
+        <ul>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+    <section id="crop-api-effect">
+      <h2>Basic image effect</h2>
+      <ul>
+	      <li class="fragment">finds crop and applies it</li>
+	      <li class="fragment">can be chanied with other effects (scale &amp; crop, scale, ...)</li>
+	      <li class="fragment">can be overriden to achieve custom behaviour</li>
+	      <li class="fragment">&hellip; or you can implement your own from scratch</li>
+	    </ul>
+      <aside class="notes">
+        <ul>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+    <section id="crop-api-effect-2">
+      <img src="img/crop_effect.png" class="stretch" />
+      <aside class="notes">
+        <ul>
+          <li></li>
+        </ul>
+      </aside>
+	  </section>
+
+    <section id="crop-api-style">
+      <img src="img/crop_style.png" class="stretch" />
+      <aside class="notes">
+        <ul>
           <li></li>
         </ul>
       </aside>
