@@ -1,6 +1,6 @@
 # Drupal 8 cropping slide deck
 
-Slide deck about [Drupal](https://drupal.org) 8 cropping solutions. Features:
+  Slide deck about [Drupal](https://drupal.org) 8 cropping solutions. Features:
 
 - [Crop API](https://drupal.org/project/crop)
 - [Image widget crop](https://drupal.org/project/image_widget_crop)
